@@ -1,0 +1,151 @@
+@extends('layout.admin')
+
+@section('css')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+@endsection
+
+@section('content')
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row align-items-center d-flex media py-4">
+        <div class="col-lg-6 col-12 media-body d-none d-lg-block f-grow-1">
+            <h5 class="fw-bold"><span class="text-muted fw-light">Our Teams /</span> Ubah Data Team</h5>
+        </div>
+    </div>
+
+    <!-- Basic with Icons -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+          <div class="card-body">
+            <form method="POST" action="{{ route('admin.teams.update', $team) }}" enctype="multipart/form-data">
+              @csrf
+              @method('put')
+              <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <label for="defaultFormControlInput" class="form-label">
+                        Nama
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon11">
+                            <iconify-icon icon="bx:hash"></iconify-icon>
+                        </span>
+                        <input
+                            id="name"
+                            type="text"
+                            class="form-control @error('name') is-invalid @enderror"
+                            name="name"
+                            value="{{ $team->name }}"
+                            placeholder="Enter Name"
+                            aria-describedby="basic-addon13"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    @error('name')
+                    <div id="defaultFormControlHelp" class="form-text text-danger">
+                        <span class="errorTxt">{{ $message }}</span>
+                    </div>
+                    @enderror
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <label for="defaultFormControlInput" class="form-label">
+                        Jabatan
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon11">
+                            <iconify-icon icon="bx:hash"></iconify-icon>
+                        </span>
+                        <input
+                            id="occupation"
+                            type="text"
+                            class="form-control @error('occupation') is-invalid @enderror"
+                            name="occupation"
+                            value="{{ $team->occupation }}"
+                            placeholder="Enter Occupation"
+                            aria-describedby="basic-addon13"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    @error('occupation')
+                    <div id="defaultFormControlHelp" class="form-text text-danger">
+                        <span class="errorTxt">{{ $message }}</span>
+                    </div>
+                    @enderror
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <label for="defaultFormControlInput" class="form-label">
+                        Lokasi
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon11">
+                            <iconify-icon icon="bx:hash"></iconify-icon>
+                        </span>
+                        <input
+                            id="location"
+                            type="text"
+                            class="form-control @error('location') is-invalid @enderror"
+                            name="location"
+                            value="{{ $team->location }}"
+                            placeholder="Enter Location"
+                            aria-describedby="basic-addon13"
+                            required
+                            autofocus
+                        />
+                    </div>
+                    @error('location')
+                    <div id="defaultFormControlHelp" class="form-text text-danger">
+                        <span class="errorTxt">{{ $message }}</span>
+                    </div>
+                    @enderror
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <label for="defaultFormControlInput" class="form-label">
+                        Image (PNG/JPG)
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon11">
+                            <iconify-icon icon="bxs:file-image"></iconify-icon>
+                        </span>
+                        <input class="form-control" type="file" id="avatar" name="avatar"/>
+                    </div>
+                    @error('avatar')
+                    <div id="defaultFormControlHelp" class="form-text text-danger">
+                        <span class="errorTxt">{{ $message }}</span>
+                    </div>
+                    @enderror
+                </div>
+              </div>
+              <div class="row justify-content-left mt-3">
+                <div class="col-sm-6 d-grid gap-2 mx-auto mb-3">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+                <div class="col-sm-6 d-grid gap-2 mx-auto mb-3">
+                    <a class="btn btn-danger" data-toggle="tooltip" href="{{ route('admin.teams.index') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                        Cancel
+                    </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <!-- Basic with Icons -->
+</div>
+
+@endsection
+
+@section('script')
+    <!-- AJAX -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <!-- js untuk select2  -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- JS untuk Validation -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.js"></script>
+    <script src="{{ asset('asset-new/js/validate-buku.js') }}"></script>
+@endsection
+
