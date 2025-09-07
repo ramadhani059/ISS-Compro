@@ -1,0 +1,143 @@
+.menu-icon{
+    font-size: 32px;
+    display: none;
+}
+
+.card-stat {
+    width: 200px;
+    gap: 10px;
+}
+
+.frame-foot {
+    width: 700px;
+    height: 300px;
+}
+
+.company-add {
+    gap: 2.5rem;
+}
+
+.team-page {
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px){
+    .nav-menu{
+        flex-wrap: wrap;
+    }
+
+    .companyName{
+        font-size: 13px;
+    }
+
+    .companyTagline{
+        font-size: 10px;
+    }
+
+    .ul-menu{
+        padding-top: 20px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-hidden{
+        display: none;
+    }
+
+    .menu-icon{
+        display: flex;
+        align-items: center;
+    }
+
+    .mysection{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Hero */
+    .h1-hero{
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    .p-hero{
+        font-size: 13px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+
+    .hero-img{
+        display: none;
+    }
+
+    /* Principle */
+    .principle-icon{
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Product */
+    .img-product{
+        height: auto;
+        width: 343px;
+        object-fit:contain;
+    }
+
+    /* Team */
+    .team-page{
+        margin-top: 50px;
+    }
+
+    .mysection-team{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 0px;
+        padding-top: 10px;
+    }
+
+    .name-team{
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .potition-team{
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .address-team{
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* stat */
+    .card-stat{
+        width: 150px;
+        gap: 5px;
+    }
+
+    .stat-text{
+        font-size: 20px;
+    }
+
+    .stat-subtext{
+        font-size: 13px;
+    }
+
+    /* testimoni */
+    .img-testimoni{
+        display: none;
+    }
+
+    /* Footer */
+    .company-add{
+        gap: 1.25rem;
+    }
+
+    .frame-foot{
+        margin-top: 20px;
+        width: 345px;
+        height: 200px;
+    }
+}

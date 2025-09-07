@@ -1,21 +1,21 @@
 @extends('front.layouts.app')
 @section('content')
-<div id="header" class="bg-[#F6F7FA] relative h-[600px] -mb-[388px]">
+  <div id="header" class="bg-[#F6F7FA] relative overflow-hidden mysection">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar/>
     </div>
   </div>
-  <div id="Teams" class="w-full px-[10px] relative z-10">
+  <div id="Teams" class="bg-[#F6F7FA] w-full px-[10px] relative z-10">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[50px] items-center">
-      <div class="flex flex-col gap-[50px] items-center">
+      <div class="flex flex-col gap-[50px] items-center team-page">
         <div class="breadcrumb flex items-center justify-center gap-[30px]">
           <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
           <span class="text-cp-light-grey">/</span>
           <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Team</p>
         </div>
-        <h2 class="font-bold text-4xl leading-[45px] text-center">We’re Here to Build <br> Your Awesome Projects</h2>
+        <h2 class="font-bold text-4xl leading-[45px] text-center h1-hero">We’re Here to Build <br> Your Awesome Projects</h2>
       </div>
-      <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+      <div class="teams-card-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
         @forelse($teams as $team)
         <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
           <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
@@ -24,14 +24,14 @@
             </div>
           </div>
           <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
-            <p class="text-cp-light-grey">{{ $team->occupation }}</p>
+            <p class="font-bold text-xl leading-[30px] name-team">{{ $team->name }}</p>
+            <p class="text-cp-light-grey potition-team">{{ $team->occupation }}</p>
           </div>
           <div class="flex items-center justify-center gap-[10px]">
             <div class="w-6 h-6 flex shrink-0">
               <img src="{{asset('assets/icons/global.svg') }}" alt="icon">
             </div>
-            <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
+            <p class="text-cp-dark-blue font-semibold address-team">{{ $team->location }}</p>
           </div>
         </div>
          @empty
@@ -40,9 +40,9 @@
       </div>
     </div>
   </div>
-  <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
+  <footer class="bg-cp-black w-full relative overflow-hidden mt-20 mysection">
     <div class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] relative z-10" style="padding-bottom: 100px">
-      <div class="flex flex-col gap-10">
+      <div class="flex flex-col company-add">
         <div class="flex items-center gap-3">
           <div class="flex shrink-0 h-[100px] overflow-hidden">
               <img src="{{asset('assets/logo/02.png')}}" class="object-contain w-full h-full" alt="logo">
@@ -86,7 +86,7 @@
         <div class="flex flex-col w-[600px] gap-3">
             <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.9965537245835!2d112.78048947500065!3d-7.354280992654667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e51019225487%3A0x748f020fc35343d3!2sTOPAZ%20Residence%2C%20DELIMA%20Residences!5e0!3m2!1sid!2sid!4v1739435581627!5m2!1sid!2sid"
-            width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            style="border:0;" class="frame-foot" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
