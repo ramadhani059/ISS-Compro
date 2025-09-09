@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irawan Sinergi Sejahtera</title>
+  <meta name="description" content="" />
+  <link rel="icon" type="image/x-icon" href="{{asset('assets/logo/02.png')}}" />
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link href="{{ asset('css/output.css') }}" rel="stylesheet">
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
